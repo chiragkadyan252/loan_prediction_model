@@ -24,9 +24,9 @@ SECRET_KEY = 'django-insecure-dn%x)19b9vj#xlq=-400jl4nw30#a1r)2=@)i9%=h$ldiy5^c#
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",
+    "loan-prediction-model-krcc.onrender.com",
     "localhost",
-    "loan-predictor",
+    "127.0.0.1",
 ]
 
 
