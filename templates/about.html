@@ -1,0 +1,335 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    .about-card {
+        border: none;
+        border-radius: 18px;
+    }
+
+    .about-title {
+        font-weight: 700;
+    }
+
+    .info-card {
+        border: none;
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+
+    .info-card:hover {
+        transform: translateY(-4px);
+    }
+</style>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="text-center mb-5">
+
+    <h1 class="about-title">
+        About Loan Approval Prediction
+    </h1>
+
+    <p class="text-muted">
+        A Machine Learning based loan approval prediction system.
+    </p>
+
+</div>
+
+
+<!-- ================= PROJECT OVERVIEW ================= -->
+
+<div class="card about-card shadow-sm mb-4">
+
+    <div class="card-body p-4 p-md-5">
+
+        <h3 class="text-primary fw-bold mb-3">
+            Project Overview
+        </h3>
+
+        <p class="text-muted mb-0">
+            This project is a Machine Learning based web application
+            developed to predict whether a loan application is likely
+            to be approved or rejected.
+        </p>
+
+        <p class="text-muted mt-3 mb-0">
+            The application collects applicant financial and personal
+            information through a Django web interface and sends the
+            information to a trained Machine Learning model for prediction.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TECHNOLOGIES ================= -->
+
+<div class="row g-4 mb-4">
+
+
+    <div class="col-md-4">
+
+        <div class="card info-card shadow-sm h-100">
+
+            <div class="card-body p-4 text-center">
+
+                <div class="fs-1 mb-3">
+                    🐍
+                </div>
+
+                <h4 class="fw-bold">
+                    Python
+                </h4>
+
+                <p class="text-muted">
+                    Used as the primary programming language
+                    for the Machine Learning and web application.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+        <div class="card info-card shadow-sm h-100">
+
+            <div class="card-body p-4 text-center">
+
+                <div class="fs-1 mb-3">
+                    🌐
+                </div>
+
+                <h4 class="fw-bold">
+                    Django
+                </h4>
+
+                <p class="text-muted">
+                    Used to develop the web application,
+                    authentication system and database integration.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+        <div class="card info-card shadow-sm h-100">
+
+            <div class="card-body p-4 text-center">
+
+                <div class="fs-1 mb-3">
+                    🤖
+                </div>
+
+                <h4 class="fw-bold">
+                    Scikit-Learn
+                </h4>
+
+                <p class="text-muted">
+                    Used for the trained Machine Learning
+                    loan approval prediction model.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MODEL INFORMATION ================= -->
+
+<div class="card about-card shadow-sm mb-4">
+
+    <div class="card-body p-4 p-md-5">
+
+        <h3 class="text-primary fw-bold mb-4">
+            Machine Learning Model
+        </h3>
+
+        <p class="text-muted">
+            The model uses applicant information to predict
+            the loan approval status.
+        </p>
+
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item">
+                        No. of Dependents
+                    </li>
+
+                    <li class="list-group-item">
+                        Education
+                    </li>
+
+                    <li class="list-group-item">
+                        Self Employed
+                    </li>
+
+                    <li class="list-group-item">
+                        Annual Income
+                    </li>
+
+                    <li class="list-group-item">
+                        Loan Amount
+                    </li>
+
+                    <li class="list-group-item">
+                        Loan Term
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item">
+                        CIBIL Score
+                    </li>
+
+                    <li class="list-group-item">
+                        Residential Assets Value
+                    </li>
+
+                    <li class="list-group-item">
+                        Commercial Assets Value
+                    </li>
+
+                    <li class="list-group-item">
+                        Luxury Assets Value
+                    </li>
+
+                    <li class="list-group-item">
+                        Bank Asset Value
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MODEL PERFORMANCE ================= -->
+
+<div class="card about-card shadow-sm mb-4">
+
+    <div class="card-body text-center p-5">
+
+        <h3 class="fw-bold">
+            Model Performance
+        </h3>
+
+        <div class="display-4 fw-bold text-success mt-3">
+            98%
+        </div>
+
+        <p class="text-muted mb-0">
+            Model Accuracy
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<div class="card about-card shadow-sm">
+
+    <div class="card-body p-4 p-md-5">
+
+        <h3 class="text-primary fw-bold mb-4">
+            How It Works
+        </h3>
+
+        <div class="row text-center g-4">
+
+            <div class="col-md-4">
+
+                <div class="fs-1">
+                    📝
+                </div>
+
+                <h5 class="fw-bold mt-2">
+                    1. Enter Details
+                </h5>
+
+                <p class="text-muted">
+                    Enter the applicant's financial
+                    and personal information.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="fs-1">
+                    🤖
+                </div>
+
+                <h5 class="fw-bold mt-2">
+                    2. ML Prediction
+                </h5>
+
+                <p class="text-muted">
+                    The trained Machine Learning model
+                    analyzes the provided information.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="fs-1">
+                    ✅
+                </div>
+
+                <h5 class="fw-bold mt-2">
+                    3. Get Result
+                </h5>
+
+                <p class="text-muted">
+                    The system displays whether the
+                    loan is predicted as approved or rejected.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

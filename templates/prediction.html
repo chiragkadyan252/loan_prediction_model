@@ -1,0 +1,379 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    .prediction-card {
+        border: none;
+        border-radius: 20px;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 10px;
+        padding: 11px 14px;
+    }
+
+    .form-label {
+        font-weight: 600;
+    }
+
+    .section-heading {
+        color: #0d6efd;
+        font-weight: 700;
+    }
+
+    .predict-btn {
+        border-radius: 30px;
+        padding: 12px;
+        font-weight: 600;
+    }
+
+    .result-box {
+        border-radius: 16px;
+    }
+</style>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="text-center mb-5">
+
+    <h1 class="fw-bold">
+        Loan Prediction
+    </h1>
+
+    <p class="text-muted">
+        Enter the applicant's details to predict loan approval.
+    </p>
+
+</div>
+
+
+<div class="card prediction-card shadow p-4 p-md-5">
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+
+        <!-- ================= PERSONAL DETAILS ================= -->
+
+        <h4 class="section-heading mb-4">
+            Personal Details
+        </h4>
+
+        <div class="row">
+
+
+            <!-- Dependents -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    No. of Dependents
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="no_of_dependents"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <!-- Education -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Education
+                </label>
+
+                <select
+                    class="form-select"
+                    name="education"
+                    required>
+
+                    <option value="">
+                        Select Education
+                    </option>
+
+                    <option value="Graduate">
+                        Graduate
+                    </option>
+
+                    <option value="Not Graduate">
+                        Not Graduate
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Self Employed -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Self Employed
+                </label>
+
+                <select
+                    class="form-select"
+                    name="self_employed"
+                    required>
+
+                    <option value="">
+                        Select Option
+                    </option>
+
+                    <option value="Yes">
+                        Yes
+                    </option>
+
+                    <option value="No">
+                        No
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <hr class="my-4">
+
+
+        <!-- ================= LOAN DETAILS ================= -->
+
+        <h4 class="section-heading mb-4">
+            Loan Details
+        </h4>
+
+        <div class="row">
+
+
+            <!-- Annual Income -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Annual Income
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="income_annum"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <!-- Loan Amount -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Loan Amount
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="loan_amount"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <!-- Loan Term -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Loan Term
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="loan_term"
+                    min="1"
+                    required>
+
+            </div>
+
+
+            <!-- CIBIL -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    CIBIL Score
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="cibil_score"
+                    min="0"
+                    max="900"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <hr class="my-4">
+
+
+        <!-- ================= ASSET DETAILS ================= -->
+
+        <h4 class="section-heading mb-4">
+            Asset Details
+        </h4>
+
+        <div class="row">
+
+
+            <!-- Residential -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Residential Assets Value
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="residential_assets_value"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <!-- Commercial -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Commercial Assets Value
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="commercial_assets_value"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <!-- Luxury -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Luxury Assets Value
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="luxury_assets_value"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <!-- Bank -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+                    Bank Asset Value
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    name="bank_asset_value"
+                    min="0"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PREDICT BUTTON ================= -->
+
+        <div class="d-grid mt-3">
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-lg predict-btn">
+
+                🔍 Predict Loan Approval
+
+            </button>
+
+        </div>
+
+    </form>
+
+
+    <!-- ================= RESULT ================= -->
+
+    {% if result %}
+
+        {% if result.status == "approved" %}
+
+            <div class="alert alert-success result-box mt-5 p-4 text-center">
+
+                <h2 class="fw-bold">
+                    ✅ {{ result.title }}
+                </h2>
+
+                <p class="mb-0 mt-2">
+                    {{ result.message }}
+                </p>
+
+            </div>
+
+        {% else %}
+
+            <div class="alert alert-danger result-box mt-5 p-4 text-center">
+
+                <h2 class="fw-bold">
+                    ❌ {{ result.title }}
+                </h2>
+
+                <p class="mb-0 mt-2">
+                    {{ result.message }}
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    {% endif %}
+
+
+</div>
+
+
+{% endblock %}

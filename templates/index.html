@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+        font-weight: 700;
+    }
+
+    .hero-subtitle {
+        color: #0d6efd;
+        font-weight: 600;
+    }
+
+    .hero-text {
+        color: #6c757d;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .hero-image {
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .feature-card {
+        border: none;
+        border-radius: 16px;
+        transition: 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .stat-card {
+        border: none;
+        border-radius: 16px;
+        padding: 25px;
+    }
+
+    .section-title {
+        font-weight: 700;
+    }
+</style>
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<div class="container hero-section">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-6">
+
+            <span class="badge bg-primary mb-3 px-3 py-2">
+                Machine Learning Based System
+            </span>
+
+            <h1 class="hero-title">
+                Smart Loan
+                <span class="text-primary">
+                    Approval Prediction
+                </span>
+            </h1>
+
+            <h4 class="hero-subtitle mt-3">
+                Make smarter loan decisions with Machine Learning
+            </h4>
+
+            <p class="hero-text mt-4">
+                Predict whether a loan application is likely to be
+                approved or rejected using a Machine Learning model
+                built with Python, Django and Scikit-Learn.
+            </p>
+
+            <div class="mt-4">
+
+                <a href="{% url 'prediction' %}"
+                   class="btn btn-primary btn-lg px-4 me-2">
+                    Predict Now
+                </a>
+
+                <a href="{% url 'about' %}"
+                   class="btn btn-outline-primary btn-lg px-4">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+            <img
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900"
+                class="img-fluid hero-image"
+                alt="Loan and financial analysis">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FEATURES ================= -->
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="section-title">
+            Why Use Our System?
+        </h2>
+
+        <p class="text-muted">
+            Simple, fast and data-driven loan prediction
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow-sm h-100">
+
+                <div class="card-body p-4 text-center">
+
+                    <div class="fs-1 mb-3">
+                        🤖
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Machine Learning
+                    </h4>
+
+                    <p class="text-muted">
+                        Uses a trained Machine Learning model
+                        to analyze loan application details.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow-sm h-100">
+
+                <div class="card-body p-4 text-center">
+
+                    <div class="fs-1 mb-3">
+                        ⚡
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Instant Prediction
+                    </h4>
+
+                    <p class="text-muted">
+                        Enter the applicant details and receive
+                        a loan prediction instantly.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="card feature-card shadow-sm h-100">
+
+                <div class="card-body p-4 text-center">
+
+                    <div class="fs-1 mb-3">
+                        📊
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Prediction History
+                    </h4>
+
+                    <p class="text-muted">
+                        Logged-in users can view their previous
+                        loan prediction records.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROJECT HIGHLIGHTS ================= -->
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="section-title">
+            Project Highlights
+        </h2>
+
+        <p class="text-muted">
+            Key information about the prediction system
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+        <div class="col-md-3">
+
+            <div class="card stat-card bg-primary text-white shadow">
+
+                <h2 class="fw-bold">
+                    98%
+                </h2>
+
+                <p class="mb-0">
+                    Model Accuracy
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card stat-card bg-success text-white shadow">
+
+                <h2 class="fw-bold">
+                    ML
+                </h2>
+
+                <p class="mb-0">
+                    Powered Prediction
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card stat-card bg-warning text-dark shadow">
+
+                <h2 class="fw-bold">
+                    11
+                </h2>
+
+                <p class="mb-0">
+                    Input Features
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card stat-card bg-dark text-white shadow">
+
+                <h2 class="fw-bold">
+                    24/7
+                </h2>
+
+                <p class="mb-0">
+                    Available
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<div class="container py-5">
+
+    <div class="card border-0 shadow p-5 text-center">
+
+        <h2 class="fw-bold">
+            Ready to Check Your Loan Eligibility?
+        </h2>
+
+        <p class="text-muted mt-3">
+            Enter your financial details and get a
+            Machine Learning based prediction.
+        </p>
+
+        <div class="mt-3">
+
+            <a href="{% url 'prediction' %}"
+               class="btn btn-success btn-lg px-5">
+                Start Prediction
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

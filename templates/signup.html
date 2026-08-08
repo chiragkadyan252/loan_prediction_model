@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="card shadow border-0 mx-auto p-4"
+         style="max-width: 500px;">
+
+        <div class="text-center mb-4">
+
+            <h2 class="fw-bold text-primary">
+                Create Account
+            </h2>
+
+            <p class="text-muted">
+                Create an account to access your loan predictions.
+            </p>
+
+        </div>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="mb-3">
+
+                <label class="form-label fw-semibold">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    placeholder="Enter username"
+                    maxlength="150"
+                    required
+                >
+
+                <small class="text-muted">
+                    Use letters, numbers and @/./+/-/_ only.
+                </small>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label fw-semibold">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    name="password1"
+                    class="form-control"
+                    placeholder="Enter password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="mb-4">
+
+                <label class="form-label fw-semibold">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    name="password2"
+                    class="form-control"
+                    placeholder="Confirm password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary w-100 py-2">
+                Sign Up
+            </button>
+
+        </form>
+
+
+        <div class="text-center mt-4">
+
+            <span class="text-muted">
+                Already have an account?
+            </span>
+
+            <a href="{% url 'login' %}"
+               class="text-primary fw-semibold text-decoration-none">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

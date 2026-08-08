@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    .contact-card {
+        border: none;
+        border-radius: 18px;
+    }
+
+    .contact-icon {
+        font-size: 2rem;
+    }
+
+    .contact-box {
+        border-radius: 15px;
+        padding: 25px;
+        height: 100%;
+    }
+
+    .developer-name {
+        color: #0d6efd;
+        font-weight: 700;
+    }
+</style>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="text-center mb-5">
+
+    <h1 class="fw-bold">
+        Contact Us
+    </h1>
+
+    <p class="text-muted">
+        Have a question about the Loan Approval Prediction System?
+    </p>
+
+</div>
+
+
+<!-- ================= CONTACT INFORMATION ================= -->
+
+<div class="row g-4 justify-content-center">
+
+
+    <!-- Email -->
+
+    <div class="col-md-4">
+
+        <div class="card contact-card shadow-sm contact-box text-center">
+
+            <div class="contact-icon">
+                📧
+            </div>
+
+            <h4 class="fw-bold mt-3">
+                Email
+            </h4>
+
+            <p class="text-muted">
+                support@loanprediction.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Phone -->
+
+    <div class="col-md-4">
+
+        <div class="card contact-card shadow-sm contact-box text-center">
+
+            <div class="contact-icon">
+                📱
+            </div>
+
+            <h4 class="fw-bold mt-3">
+                Phone
+            </h4>
+
+            <p class="text-muted">
+                +91 98765 43210
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Location -->
+
+    <div class="col-md-4">
+
+        <div class="card contact-card shadow-sm contact-box text-center">
+
+            <div class="contact-icon">
+                📍
+            </div>
+
+            <h4 class="fw-bold mt-3">
+                Location
+            </h4>
+
+            <p class="text-muted">
+                Haryana, India
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROJECT DEVELOPER ================= -->
+
+<div class="card contact-card shadow-sm mt-5">
+
+    <div class="card-body p-4 p-md-5 text-center">
+
+        <h3 class="text-primary fw-bold">
+            Project Developer
+        </h3>
+
+        <h4 class="developer-name mt-3">
+            Chirag Kadyan
+        </h4>
+
+        <p class="text-muted mt-2">
+            BCA Data Science Student
+        </p>
+
+        <p class="text-muted mb-0">
+            Developer of the Loan Approval Prediction System
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SUPPORT ================= -->
+
+<div class="card contact-card shadow-sm mt-4">
+
+    <div class="card-body p-4 p-md-5 text-center">
+
+        <h3 class="text-primary fw-bold">
+            Project Support
+        </h3>
+
+        <p class="text-muted mt-3 mb-0">
+            For questions related to the loan prediction system,
+            account access, prediction results or prediction history,
+            please contact the project administrator.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PREDICTION CTA ================= -->
+
+<div class="text-center mt-5">
+
+    <h4 class="fw-bold">
+        Ready to make a prediction?
+    </h4>
+
+    <a href="{% url 'prediction' %}"
+       class="btn btn-primary btn-lg mt-3 px-5">
+        Start Prediction
+    </a>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    .history-card {
+        border: none;
+        border-radius: 18px;
+    }
+
+    .history-title {
+        font-weight: 700;
+    }
+
+    .table {
+        vertical-align: middle;
+    }
+
+    .table thead th {
+        white-space: nowrap;
+    }
+
+    .pdf-btn {
+        border-radius: 20px;
+    }
+</style>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="text-center mb-5">
+
+    <h1 class="history-title">
+        Prediction History
+    </h1>
+
+    <p class="text-muted">
+        View your previous loan prediction results.
+    </p>
+
+</div>
+
+
+<!-- ================= HISTORY ================= -->
+
+<div class="card history-card shadow-sm">
+
+    <div class="card-body p-4">
+
+
+        {% if predictions %}
+
+        <div class="table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Income</th>
+
+                        <th>Loan Amount</th>
+
+                        <th>CIBIL</th>
+
+                        <th>Result</th>
+
+                        <th>Report</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                {% for p in predictions %}
+
+                    <tr>
+
+                        <td>
+                            {{ p.created_at|date:"d M Y H:i" }}
+                        </td>
+
+
+                        <td>
+                            ₹ {{ p.income_annum }}
+                        </td>
+
+
+                        <td>
+                            ₹ {{ p.loan_amount }}
+                        </td>
+
+
+                        <td>
+                            {{ p.cibil_score }}
+                        </td>
+
+
+                        <td>
+
+                            {% if p.result == "Approved" %}
+
+                                <span class="badge bg-success px-3 py-2">
+                                    ✓ Approved
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger px-3 py-2">
+                                    ✕ Rejected
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <td>
+
+                            <a
+                                href="{% url 'download_report' p.id %}"
+                                class="btn btn-sm btn-outline-primary pdf-btn">
+
+                                📄 PDF Report
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        {% else %}
+
+        <!-- ================= EMPTY HISTORY ================= -->
+
+        <div class="text-center py-5">
+
+            <div class="fs-1 mb-3">
+                📋
+            </div>
+
+            <h4 class="fw-bold">
+                No Prediction History
+            </h4>
+
+            <p class="text-muted">
+                You haven't made any loan predictions yet.
+            </p>
+
+            <a
+                href="{% url 'prediction' %}"
+                class="btn btn-primary px-4">
+
+                Make Your First Prediction
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</div>
+
+
+<!-- ================= ACTION ================= -->
+
+<div class="text-center mt-4">
+
+    <a
+        href="{% url 'prediction' %}"
+        class="btn btn-primary">
+
+        + New Prediction
+
+    </a>
+
+</div>
+
+
+{% endblock %}
