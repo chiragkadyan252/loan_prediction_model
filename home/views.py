@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
-
+from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
@@ -49,10 +49,6 @@ def contact(request):
     return render(request, "contact.html")
 
 
-# =========================================================
-# SIGN UP
-# =========================================================
-
 def signup(request):
 
     if request.method == "POST":
@@ -61,11 +57,16 @@ def signup(request):
 
         if form.is_valid():
 
-            # Create user account
-            form.save()
+            user = form.save()
 
-            # After signup → Login page
-            return redirect("login")
+            login(request, user)
+
+            messages.success(
+                request,
+                "Account created successfully! Welcome to Loan Approval Prediction."
+            )
+
+            return redirect("home")
 
     else:
 
@@ -74,12 +75,8 @@ def signup(request):
     return render(
         request,
         "signup.html",
-        {
-            "form": form
-        }
+        {"form": form}
     )
-
-
 # =========================================================
 # LOGIN
 # =========================================================

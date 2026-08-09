@@ -236,6 +236,33 @@
 
     <div class="container py-5">
 
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="alert alert-success alert-dismissible fade show text-center"
+                 role="alert">
+
+                <strong>✓ Account Created!</strong>
+                {{ message }}
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert">
+                </button>
+
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+
+</div>
+
         {% block content %}
 
         {% endblock %}
