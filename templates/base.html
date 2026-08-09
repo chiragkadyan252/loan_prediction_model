@@ -46,13 +46,9 @@
 <body>
 
 
-<!-- NAVBAR -->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
 
     <div class="container">
-
-        <!-- Logo / Brand -->
 
         <a class="navbar-brand"
            href="{% url 'home' %}">
@@ -62,23 +58,16 @@
         </a>
 
 
-        <!-- Mobile Menu Button -->
-
         <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
+            data-bs-target="#navbarNav">
 
             <span class="navbar-toggler-icon"></span>
 
         </button>
 
-
-        <!-- Navigation -->
 
         <div class="collapse navbar-collapse"
              id="navbarNav">
@@ -87,8 +76,6 @@
 
 
                 {% if user.is_authenticated %}
-
-                    <!-- Welcome -->
 
                     <li class="nav-item">
 
@@ -100,8 +87,6 @@
 
                     </li>
 
-
-                    <!-- Home -->
 
                     <li class="nav-item">
 
@@ -115,8 +100,6 @@
                     </li>
 
 
-                    <!-- Predict -->
-
                     <li class="nav-item">
 
                         <a class="nav-link text-white"
@@ -129,8 +112,6 @@
                     </li>
 
 
-                    <!-- History -->
-
                     <li class="nav-item">
 
                         <a class="nav-link text-white"
@@ -142,8 +123,6 @@
 
                     </li>
 
-
-                    <!-- Dashboard -->
 
                     <li class="nav-item">
 
@@ -160,8 +139,6 @@
                 {% else %}
 
 
-                    <!-- Login -->
-
                     <li class="nav-item">
 
                         <a class="nav-link text-white"
@@ -173,8 +150,6 @@
 
                     </li>
 
-
-                    <!-- Sign Up -->
 
                     <li class="nav-item">
 
@@ -191,8 +166,6 @@
                 {% endif %}
 
 
-                <!-- About -->
-
                 <li class="nav-item">
 
                     <a class="nav-link text-white"
@@ -204,8 +177,6 @@
 
                 </li>
 
-
-                <!-- Contact -->
 
                 <li class="nav-item">
 
@@ -220,8 +191,6 @@
 
 
                 {% if user.is_authenticated %}
-
-                    <!-- Logout -->
 
                     <li class="nav-item ms-2">
 
@@ -246,14 +215,10 @@
 </nav>
 
 
-<!-- MAIN CONTENT -->
-
 <main>
 
     <div class="container py-5">
 
-
-        <!-- Django Messages -->
 
         {% if messages %}
 
@@ -263,15 +228,16 @@
                     class="alert alert-success alert-dismissible fade show text-center"
                     role="alert">
 
-                    <strong>✓ Account Created!</strong>
+                    <strong>
+                        ✓
+                    </strong>
 
                     {{ message }}
 
                     <button
                         type="button"
                         class="btn-close"
-                        data-bs-dismiss="alert"
-                        aria-label="Close">
+                        data-bs-dismiss="alert">
                     </button>
 
                 </div>
@@ -280,8 +246,6 @@
 
         {% endif %}
 
-
-        <!-- PAGE CONTENT -->
 
         {% block content %}
 
@@ -292,8 +256,6 @@
 
 </main>
 
-
-<!-- Bootstrap JavaScript -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">

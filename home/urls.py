@@ -4,20 +4,11 @@ from . import views
 
 urlpatterns = [
 
-    # =========================
-    # HOME
-    # =========================
-
     path(
         "",
         views.index,
         name="home"
     ),
-
-
-    # =========================
-    # ABOUT
-    # =========================
 
     path(
         "about/",
@@ -25,65 +16,11 @@ urlpatterns = [
         name="about"
     ),
 
-
-    # =========================
-    # CONTACT
-    # =========================
-
     path(
         "contact/",
         views.contact,
         name="contact"
     ),
-
-
-    # =========================
-    # LOGIN
-    # =========================
-
-    path(
-        "login/",
-        views.user_login,
-        name="login"
-    ),
-
-
-    # =========================
-    # SIGN UP
-    # =========================
-
-    path(
-        "signup/",
-        views.signup,
-        name="signup"
-    ),
-
-
-    # =========================
-    # LOGOUT
-    # =========================
-
-    path(
-        "logout/",
-        views.user_logout,
-        name="logout"
-    ),
-
-
-    # =========================
-    # DASHBOARD
-    # =========================
-
-    path(
-        "dashboard/",
-        views.dashboard,
-        name="dashboard"
-    ),
-
-
-    # =========================
-    # PREDICTION
-    # =========================
 
     path(
         "prediction/",
@@ -91,21 +28,35 @@ urlpatterns = [
         name="prediction"
     ),
 
-
-    # =========================
-    # HISTORY
-    # =========================
-
     path(
         "history/",
         views.history,
         name="history"
     ),
 
+    path(
+        "dashboard/",
+        views.dashboard,
+        name="dashboard"
+    ),
 
-    # =========================
-    # PDF REPORT
-    # =========================
+    path(
+        "login/",
+        views.user_login,
+        name="login"
+    ),
+
+    path(
+        "logout/",
+        views.user_logout,
+        name="logout"
+    ),
+
+    path(
+        "signup/",
+        views.signup,
+        name="signup"
+    ),
 
     path(
         "download-report/<int:prediction_id>/",
